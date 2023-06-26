@@ -9,14 +9,14 @@ try:
     browser.get(link)
 
     # Ваш код, который заполняет обязательные поля
-    element1 = browser.find_element(By.XPATH, "//input[@class='form-control first' and @required]")
-    element1.send_keys("Мой ответ1")
+    element1 = browser.find_element(By.CSS_SELECTOR, "input.form-control.first:required")
+    element1.send_keys("First Name")
 
-    element2 = browser.find_element(By.XPATH, "//input[@class='form-control second' and @required]")
-    element2.send_keys("Мой ответ2")
+    element2 = browser.find_element(By.CSS_SELECTOR, "input.form-control.second:required")
+    element2.send_keys("Last name")
 
-    element3 = browser.find_element(By.CSS_SELECTOR, "//input[@class='form-control third' and @required]")
-    element3.send_keys("Мой ответ3")
+    element3 = browser.find_element(By.CSS_SELECTOR, "input.form-control.third:required")
+    element3.send_keys("Email")
 
     # Отправляем заполненную форму
     button = browser.find_element(By.CSS_SELECTOR, "button.btn")
